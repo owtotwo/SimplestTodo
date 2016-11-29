@@ -68,7 +68,7 @@ impl<'a> Todo<'a> {
     }
 
     pub fn done(&mut self, id: usize) {
-        self.items.swap_remove(id - 1);
+        self.items.remove(id - 1);
     }
 
     pub fn len(&self) -> usize {
