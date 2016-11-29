@@ -1,0 +1,14 @@
+[root]
+name = "todo"
+version = "0.1.0"
+dependencies = [
+ "json 0.11.2 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "json"
+version = "0.11.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[metadata]
+"checksum json 0.11.2 (registry+https://github.com/rust-lang/crates.io-index)" = "777d62652aaadfc58a43d15f644f34aeaa9cba7aaf9412df2e8eb3e36b0a120d"
