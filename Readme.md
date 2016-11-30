@@ -22,7 +22,7 @@ Manage Todo list as simple as possible.
  [ 2] Just One Last Dance 
 ```
 
-6. Delete a note
+6. Delete a note  
     `$> todo 1`  
     `$> todo`    
 ``` Output
