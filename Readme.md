@@ -31,4 +31,4 @@ Manage Todo list as simple as possible.
 
 ## Dependencies ##
 * Rust 1.13+
-* carte json = "0.11.2"
+* crate json = "0.11.2"
