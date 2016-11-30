@@ -86,11 +86,10 @@ impl<'a> Drop for Todo<'a> {
 
 impl<'a> fmt::Display for Todo<'a> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        try!(write!(f, " [--] -- Total {:2} -- \n", self.items.len()));
         for (count, item) in self.items.iter().enumerate() {
-            try!(write!(f, " [{:2}]  {} \n", count + 1, item));
+            try!(write!(f, " [{:2}] {} \n", count + 1, item));
         }
-        write!(f, " [--] ----  End  ---- \n")
+        Ok(())
     }
 }
 
