@@ -18,17 +18,18 @@ Manage Todo list as simple as possible.
 5. List all notes  
     `$> todo`  
 ``` Output
- [ 1] 我唔知你系度讲紧D乜野 
- [ 2] Just One Last Dance 
+ [ 1] Just One Last Dance 
+ [ 2] 我唔知你系度讲紧D乜野 
 ```
 
 6. Delete a note  
     `$> todo 1`  
     `$> todo`    
 ``` Output
- [ 1] Just One Last Dance  
+ [ 1] 我唔知你系度讲紧D乜野 
 ```
 
 ## Dependencies ##
 * Rust 1.13+
 * crate json = "0.11.2"
+

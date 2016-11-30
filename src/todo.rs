@@ -44,7 +44,7 @@ impl<'a> Todo<'a> {
 
         for item in data.members_mut() {
             if let Some(val) = item.take_string() {
-                self.add(val).unwrap();
+                self.items.push(Item { content: val });
             }
         }
         Ok(())
@@ -63,7 +63,7 @@ impl<'a> Todo<'a> {
     }
 
     pub fn add(&mut self, content: String) -> Result<()> {
-        self.items.push(Item { content: content });
+        self.items.insert(0, Item { content: content });
         Ok(())
     }
 
@@ -98,4 +98,3 @@ impl fmt::Display for Item {
         write!(f, "{}", self.content)
     }
 }
-
