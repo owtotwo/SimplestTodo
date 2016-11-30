@@ -9,7 +9,7 @@ Manage Todo list as simple as possible.
     `$> sudo cp ./target/release/todo /usr/local/bin`  
 
 3. Set environment variable `TODO_PATH` for the path of the storage file such as `~/.todo`  
-    `$> echo "export TODO_PATH=$HOME/.todo" >> ~/.profile` && source ~/.profile  
+    `$> echo "export TODO_PATH=$HOME/.todo" >> ~/.profile && source ~/.profile`  
 
 4. Add some notes  
     `$> todo 我唔知你系度讲紧D乜野`  
