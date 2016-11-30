@@ -29,4 +29,6 @@ Manage Todo list as simple as possible.
  [ 1] Just One Last Dance  
 ```
 
-## 
+## Dependencies ##
+* Rust 1.13+
+* carte json = "0.11.2"
