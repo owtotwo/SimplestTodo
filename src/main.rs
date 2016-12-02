@@ -19,14 +19,14 @@ fn main() {
     match env::args().len() {
         1 => print!("{}", t),
         2 => match env::args().nth(1) {
-            Some(ref arg) if arg.parse::<usize>().and_then(|id| {
-                if id > 0 && id <= t.len() { Ok(id) }
-                else { "".parse::<usize>() } // hack
-            }).is_ok() => {
-                match arg.parse::<usize>() {
-                    Ok(id)  => t.done(id),
-                    _ => unreachable!(),
-                };
+            Some(ref arg) if arg.parse::<usize>().is_ok() => {
+                let id = arg.parse::<usize>().unwrap();
+                if id > 0 && id <= t.len() {
+                    t.done(id);
+                } else {
+                    println!("Note: Maybe It needs a Correct Number.");
+                    return;
+                }
             },
             Some(arg) => {
                 t.add(arg).unwrap();
