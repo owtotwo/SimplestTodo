@@ -14,24 +14,24 @@ fn main() {
         }
     }
 
-    let mut t = todo::Todo::new(&path);
+    let mut todolist = todo::Todo::new(&path);
 
-    match env::args().len() {
-        1 => print!("{}", t),
-        2 => match env::args().nth(1) {
-            Some(ref arg) if arg.parse::<usize>().is_ok() => {
-                let id = arg.parse::<usize>().unwrap();
-                if id > 0 && id <= t.len() {
-                    t.done(id);
+    let args: Vec<String> = env::args().collect();
+
+    match args.len() {
+        1 => print!("{}", todolist),
+        2 => {
+            // if args[1] is a number, regrads it as an index
+            if let Ok(id) = args[1].parse::<usize>() {
+                if id > 0 && id <= todolist.len() {
+                    todolist.done(id);
                 } else {
                     println!("Note: Maybe It needs a Correct Number.");
-                    return;
                 }
-            },
-            Some(arg) => {
-                t.add(arg).unwrap();
+            // regrads it as a note
+            } else {
+                todolist.add(args[1].clone()).unwrap();
             }
-            _ => print_help(),
         },
         _ => print_help(),
     }
