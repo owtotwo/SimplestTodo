@@ -22,7 +22,7 @@ fn main() {
         1 => print!("{}", todolist),
         2 => {
             // if args[1] is a number, regrads it as an index
-            if let Ok(id) = args[1].parse::<usize>() {
+            if let Ok(id) = args[1].parse() {
                 if id > 0 && id <= todolist.len() {
                     todolist.done(id);
                 } else {
