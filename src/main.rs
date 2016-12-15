@@ -1,18 +1,20 @@
-mod todo;
+#[macro_use]
+extern crate json;
 
 use std::env;
 
-fn main() {
-    let key = "TODO_PATH";
-    let path: String;
+mod todo;
 
-    match env::var(key) {
-        Ok(val) => path = val,
+fn main() {
+    let env_key = "TODO_PATH";
+
+    let path: String = match env::var(env_key) {
+        Ok(val) => val,
         Err(_) => {
-            println!("Please Set Environment Variable `{}`.", key);
+            println!("Please Set Environment Variable `{}`.", env_key);
             return;
         }
-    }
+    };
 
     let mut todolist = todo::Todo::new(&path);
 
@@ -28,9 +30,16 @@ fn main() {
                 } else {
                     println!("Note: Maybe It needs a Correct Number.");
                 }
-            // regrads it as a note
+            // want to sync or add a note
             } else {
-                todolist.add(args[1].clone()).unwrap();
+                // update it
+                match args[1] {
+                    ref s if s == "help" || s == "--help" => print_help(),
+                    ref s if s == "sync" => todolist.sync(),
+                    ref s if s == "upload" => todolist.upload(),
+                // regrads it as a note
+                    ref s => todolist.add(s),
+                };
             }
         },
         _ => print_help(),
@@ -38,5 +47,10 @@ fn main() {
 }
 
 fn print_help() {
-    println!("Usage: todo <note/id>. (note to add, id to remove)");
+    println!("Usage: todo [<note>/<id>/sync/upload/help].\n\
+              i.e. :  todo 'I love rust'  -- add a note \n        \
+                      todo 2              -- delete the second item \n        \
+                      todo upload         -- upload local `.todo` file to gist \n        \
+                      todo sync           -- sync todolist by gist\n\
+              -- Copyright (c) 2016 sysu_AT <owtotwo@163.com> --");
 }
