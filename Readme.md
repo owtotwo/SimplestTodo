@@ -72,7 +72,7 @@ Manage Todo list as simple as possible on command line.
     ```
 
 5. Sync by an existed gist  
-   (Ps: You can share the same todolist in different platform by gist)
+   (Ps: You can share the same todolist in different platform by gist)  
     `$ cat $TODO_PATH`  
     ``` Output
     {
@@ -104,7 +104,9 @@ Manage Todo list as simple as possible on command line.
     ```
    And then you just sync again:  
     `$ todo sync`  
-   Everything will be Ok.  
+
+
+Everything will be Ok.  
 
 
 ## Dependencies ##
