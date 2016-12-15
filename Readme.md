@@ -49,6 +49,9 @@ Manage Todo list as simple as possible on command line.
     checkbox.)  
     `$ echo "export GITHUB_ACCESS_TOKEN=<your_personal_access_token_here>" >> 
      ~/.profile && source ~/.profile`
+   And check it by:  
+    `$ echo $GITHUB_ACCESS_TOKEN`
+   It will display your personal access token if you success to set the environment variable.
 
 3. Synchronization (through gist)  
    (Ps: This action will merge the todo items between local and non-local. It will create a gist 
