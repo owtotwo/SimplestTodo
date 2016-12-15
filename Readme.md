@@ -6,6 +6,10 @@ Manage Todo list as simple as possible on command line.
 1. Build the program (Install [Rust](https://www.rust-lang.org/) stable version at first)  
     Install Rust (you can try "sudo" if it can not run):  
     `$ curl -sSf https://static.rust-lang.org/rustup.sh | sh`  
+    Clone reposity:  
+    `$ git clone https://github.com/owtotwo/SimplestTodo.git`  
+    Change working directory:  
+    `$ cd SimplestTodo`  
     Build it:  
     `$ cargo build --release`  
 
@@ -43,8 +47,8 @@ Manage Todo list as simple as possible on command line.
    of your todolist such as `2a87e7cac314e2a634961e760c31bec902733c9b`.  
    (Ps: On step five on link _Select the scopes_ you are required to select the `gist` 
     checkbox.)  
-    `$ echo "export GITHUB_ACCESS_TOKEN=<your_personal_access_token>" >> ~/.profile && 
-     source ~/.profile`
+    `$ echo "export GITHUB_ACCESS_TOKEN=<your_personal_access_token_here>" >> 
+     ~/.profile && source ~/.profile`
 
 3. Synchronization (through gist)  
    (Ps: This action will merge the todo items between local and non-local. It will create a gist 
